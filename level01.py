@@ -7,8 +7,8 @@ def initialize_level(game) -> None:
     entry = Room(
         "Castle Entrance",
         (
-            "You stand before an ancient castle. The massive wooden doors are "
-            "partially open, revealing darkness within."
+            "You stand before an ancient castle. The massive wooden doors "
+            "are partially open, revealing darkness within."
         ),
         """
          /\\                                  /\\
@@ -28,8 +28,9 @@ def initialize_level(game) -> None:
     main_hall = Room(
         "Main Hall",
         (
-            "A vast hall with a high ceiling. Dusty chandeliers hang above, and "
-            "tapestries line the walls."
+            "A vast hall with a high ceiling. Dusty chandeliers hang "
+            "above, and tapestries line the walls. The room is "
+            "impressive, but worn by time."
         ),
         """
     ╔═══════════════════════════════╗
@@ -48,8 +49,10 @@ def initialize_level(game) -> None:
     library = Room(
         "Library",
         (
-            "Shelves upon shelves of ancient tomes. The air is thick with dust "
-            "and the smell of old parchment."
+            "Shelves upon shelves of ancient tomes. The air is thick "
+            "with dust and the smell of old parchment. The room is "
+            "quiet, and the only sound is the creaking of old "
+            "leather."
         ),
         """
     ┌─────────────────────────────┐
@@ -67,13 +70,15 @@ def initialize_level(game) -> None:
     armory = Room(
         "Armory",
         (
-            "Weapons of various kinds line the walls. Most are rusted beyond use, "
-            "but a few might still serve."
+            "Weapons of various kinds line the walls. Most are rusted "
+            "beyond use, but a few might still serve. The room is "
+            "dimly lit, and the air is thick with the smell of "
+            "metal."
         ),
         """
     ╔════════════════════════════╗
     ║  ⚔️   ╔═╗ ╔═╗ ╔═╗ ╔═╗    ⚔️  ║
-    ║ │|│  ║ ║ ║ ║ ║ ║ ║ ║   │|│ ║
+    ║ │|│  ║ ║ ║ ║ ║ ║ ║   │|│ ║
     ║ │|│  ╚═╝ ╚═╝ ╚═╝ ╚═╝   │|│ ║
     ║       Ancient Weapons      ║
     ╚════════════════════════════╝
@@ -84,8 +89,10 @@ def initialize_level(game) -> None:
     kitchen = Room(
         "Kitchen",
         (
-            "A large stone hearth dominates one wall. Pots and pans hang from "
-            "hooks, and a large table sits in the center."
+            "A large stone hearth dominates one wall. Pots and pans "
+            "hang from hooks, and a large table sits in the center. "
+            "The room is warm and cozy, and the smell of cooking "
+            "wafts through the air."
         ),
         """
     ┌───────────────────────┐
@@ -103,8 +110,10 @@ def initialize_level(game) -> None:
     dungeon = Room(
         "Dungeon",
         (
-            "A damp, dark place with cells lining the walls. Water drips from "
-            "the ceiling, and the air is cold."
+            "A damp, dark place with cells lining the walls. Water "
+            "drips from the ceiling, and the air is cold. The room "
+            "is foreboding, and the smell of mold and decay "
+            "fills the air."
         ),
         """
     ╔═══╦═══╦═══╦═══╦═╗
@@ -121,8 +130,10 @@ def initialize_level(game) -> None:
     throne_room = Room(
         "Throne Room",
         (
-            "A grand room with a throne on a raised dais. This is where the "
-            "lord of the castle would sit in judgment."
+            "A grand room with a throne on a raised dais. This is "
+            "where the lord of the castle would sit in judgment. "
+            "The room is impressive, and the air is thick with "
+            "the weight of history."
         ),
         """
     ╔═════════════════════╗
@@ -140,8 +151,9 @@ def initialize_level(game) -> None:
     boss_chamber = Room(
         "Boss Chamber",
         (
-            "A circular chamber with strange runes carved into the floor. "
-            "The air crackles with dark energy."
+            "A circular chamber with strange runes carved into the "
+            "floor. The air crackles with dark energy. The room is "
+            "foreboding, and the smell of ozone fills the air."
         ),
         """
          ╭────────────────╮
@@ -225,16 +237,21 @@ def initialize_level(game) -> None:
     level_data = {
         "name": "The Ancient Castle",
         "description": (
-            "An ancient castle that contains powerful artifacts, but beware, a "
-            "terrible dragon has made its lair in the deepest chamber."
+            "An ancient castle that contains powerful artifacts, but "
+            "beware, a terrible dragon has made its lair in the "
+            "deepest chamber. The castle is full of secrets and "
+            "dangers, and only the bravest adventurers will "
+            "succeed."
         ),
         "required_items": 6,
         "starting_room": "start",
         "boss": {
             "name": "Ancient Dragon",
             "description": (
-                "A massive dragon with scales as black as night. Its eyes glow "
-                "with malevolence."
+                "A massive dragon with scales as black as night. Its "
+                "eyes glow with malevolence. The dragon is a "
+                "formidable foe, and only the strongest warriors "
+                "will be able to defeat it."
             ),
             "health": 200,
             "power": 70
