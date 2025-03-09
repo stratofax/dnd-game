@@ -61,6 +61,32 @@ The game has been designed with a modular structure to support multiple levels:
 - **level_manager.py**: Handles loading different levels dynamically
 - **level01.py, level02.py, etc.**: Individual level definitions
 
+## Emo Art System
+
+The game features a unique "Emo Art" visualization system that combines ASCII art with emojis:
+
+- **Room Visualization**: Each room displays ASCII art that represents its characteristics
+- **Dynamic Item Display**: Items appear as emojis below the ASCII art
+- **Room Themes**: Each room has themed emojis that enhance its visual representation
+- **Centered Layout**: Emojis are automatically centered beneath the ASCII art for better aesthetics
+- **Item Tracking**: When items are collected, they disappear from the room display
+
+Example of Emo Art for the Castle Entrance:
+```
+         /\                                  /\
+        /  \    _____________________       /  \
+       /    \  /                     \    /    \
+      /      \/                       \  /      \
+     /   _    \           []           \/        \
+    /   |_|    \          []           /\         \
+   /__________[]_\________[]__________/  \_________\
+        |  |       Ancient Castle            |   |
+        |[]|         Entrance                |[]]|
+        |__|                                 |___|
+        
+                       🏰 🚪 🏰
+```
+
 ### Adding New Levels
 
 To create a new level:
@@ -75,3 +101,9 @@ python main.py
 ```
 
 Follow the on-screen prompts to enter your name and begin your quest. Good luck, adventurer!
+
+## To Do
+
+- Add a `help` command
+- Save and load games
+- Add Emo Art to Level02
