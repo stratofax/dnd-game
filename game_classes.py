@@ -1,4 +1,4 @@
-from typing import Dict, List, Optional, Tuple
+from typing import Optional, Tuple
 
 
 class Item:
@@ -49,8 +49,8 @@ class Item:
 
 class Room:
     def __init__(
-        self, name: str, description: str, 
-        ascii_art: Optional[str] = None, 
+        self, name: str, description: str,
+        ascii_art: Optional[str] = None,
         theme: Optional[str] = None
     ):
         self.name = name
@@ -58,8 +58,9 @@ class Room:
         self._base_ascii_art = ascii_art or self._get_default_ascii_art()
         self.items = []
         self.connections = {}  # direction -> room_id
-        self._item_positions = {}  # Coordinates for item placement in ASCII art
-        self.theme = theme or self._derive_theme_from_name()
+        self._item_positions = {}  # Item coordinates for ASCII art
+        theme_name = self._derive_theme_from_name()
+        self.theme = theme or theme_name
 
     def _derive_theme_from_name(self) -> str:
         """Derive a theme key from the room name for emoji selection."""
@@ -68,9 +69,7 @@ class Room:
             if key.replace('_', ' ') in name_lower:
                 return key
         # Default to the room name with spaces replaced by underscores
-        return (
-            name_lower.replace(' ', '_')
-        )
+        return name_lower.replace(' ', '_')
 
     def _get_default_ascii_art(self) -> str:
         return """
@@ -82,10 +81,10 @@ class Room:
         """
 
     def add_item(
-        self, item: Item, 
+        self, item: Item,
         position: Optional[Tuple[int, int]] = None
     ) -> None:
-        """Add an item to the room with optional position for ASCII art display."""
+        """Add item to room with optional position for ASCII art display."""
         self.items.append(item)
         if position:
             self._item_positions[item.name.lower()] = position
@@ -102,9 +101,7 @@ class Room:
         self.connections[direction.lower()] = room_id
 
     def get_connection(self, direction: str) -> Optional[str]:
-        return (
-            self.connections.get(direction.lower())
-        )
+        return self.connections.get(direction.lower())
 
     def _get_max_line_length(self) -> int:
         """Get the length of the longest line in the ASCII art."""
@@ -115,10 +112,10 @@ class Room:
         """Get themed emojis for this room plus any item emojis."""
         # Get the base theme emojis
         theme_emojis = Item.ROOM_THEME_EMOJIS.get(self.theme, "")
-        
+
         # Add item emojis
         item_emojis = " ".join([item.emoji for item in self.items])
-        
+
         if theme_emojis and item_emojis:
             return f"{theme_emojis} | {item_emojis}"
         elif item_emojis:
@@ -130,20 +127,20 @@ class Room:
         """Center the emoji line under the ASCII art."""
         if not emoji_line:
             return ""
-        
+
         max_line_length = self._get_max_line_length()
         emoji_length = len(emoji_line)
-        
+
         # Calculate padding to center the emoji line
         padding = max(0, (max_line_length - emoji_length) // 2)
-        
+
         return " " * padding + emoji_line
 
     def display(self) -> None:
         print(f"\n=== {self.name} ===")
         print(self.description)
         print("\n" + self._base_ascii_art)
-        
+
         # Display themed emojis and item emojis below the ASCII art
         theme_emojis = self._get_theme_emojis()
         if theme_emojis:
@@ -211,23 +208,23 @@ def preview_level(game) -> None:
         print(f"\n=== {room.name} [{room_id}] ===")
         print(room.description)
         print("\n" + room._base_ascii_art)
-        
+
         # Display themed emojis and item emojis below the ASCII art
         theme_emojis = room._get_theme_emojis()
         if theme_emojis:
             centered_emojis = room._center_emojis(theme_emojis)
             print(centered_emojis)
-        
+
         if room.items:
             print("\nItems in this room:")
             for item in room.items:
                 print(f"- {item.emoji} {item.name} (Power: {item.power})")
                 print(f"  Description: {item.description}")
-        
+
         print("\nConnections:")
         for direction, connected_room_id in room.connections.items():
             connected_room = game.rooms.get(connected_room_id)
             if connected_room:
                 print(f"- {direction.capitalize()} ➡️ {connected_room.name}")
-        
+
         print("-" * 50)
