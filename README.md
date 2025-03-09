@@ -1,6 +1,6 @@
-# The DnD Game
+# The D and E Game
 
-A Dungeons and Dragons text adventure game where the player navigates through various levels, collects magical items, and ultimately confronts powerful bosses. In each level, the player must find and collect magical items to have enough power to defeat that level's boss.
+A Dungeons and Emojis text adventure game where the player navigates through various levels, collects magical items, and ultimately confronts powerful bosses. In each level, the player must find and collect magical items to have enough power to defeat that level's boss.
 
 ## Game Overview
 
@@ -85,7 +85,7 @@ The game has been designed with a modular structure to support multiple levels:
 
 ## Emo Art System
 
-The game features a unique "Emo Art" visualization system that combines ASCII art with emojis:
+Dungeons and Emojis features a character-based "Emo Art" visualization system that combines ASCII art with emojis:
 
 - **Room Visualization**: Each room displays ASCII art that represents its characteristics
 - **Dynamic Item Display**: Items appear as emojis below the ASCII art
@@ -117,9 +117,9 @@ To create a new level:
 2. Implement the `initialize_level(game)` function that creates rooms, items, and returns level metadata
 3. The level will automatically be available in the game
 
-
 ## To Do
 
 - Add a `help` command
+- Implement loading of levels
 - Save and load games
 - Add Emo Art to Level02
