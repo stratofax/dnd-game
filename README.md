@@ -12,7 +12,7 @@ A Dungeons and Dragons text adventure game where the player navigates through va
 
 Download the code as a ZIP file from GitHub and extract it to a directory on your computer, or clone this repo.
 
-This game doesn't require anything besides a working version of Python 3.9 or higher -- no additional packages are required.
+This game doesn't require anything besides a working version of Python 3.11 or higher -- no additional packages are required.
 
 To start the game, open a command prompt in this `dnd-game` directory and run:
 
