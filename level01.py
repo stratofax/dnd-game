@@ -18,9 +18,9 @@ def initialize_level(game) -> None:
      /   _    \\           []           \\/        \\
     /   |_|    \\          []           /\\         \\
    /__________[]_\\________[]__________/  \\_________\\
-        |  |       Ancient Castle            |   |
-        |[]|         Entrance                |[]]|
-        |__|                                 |___|
+        |  |       Ancient Castle            |▒▓▓▒░|
+        |[]|         Entrance                |▒▓▓▒░|
+        |__|                                 |▒▓▓▒░|
         """
     )
     game.add_room("start", entry)
